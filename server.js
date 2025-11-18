@@ -28,7 +28,10 @@ app.get('/', (req, res) => {
 app.post('/test1', (req, res) => {
     const clientStr = req.body.clientStr;
     let finalCounter = 0;
+    let finalCounter2 = 0;
     const vowel = "AEIOU";
+    const con = "BCDFGHJKLMNPQRSTVWXYZ"
+
 
     for (let i = 0; clientStr.length > i; i++) {
         for (let j = 0; vowel.length > j; j++) {
@@ -37,11 +40,24 @@ app.post('/test1', (req, res) => {
             }
 
 
+
         }
     }
+    for (let i = 0; clientStr.length > i; i++) {
+        for (let j = 0; con.length > j; j++) {
+            if (clientStr[i].toUpperCase() == con[j]) {
+                finalCounter2++;
+            }
+
+
+
+        }
+    }
+
     res.json({
         originalString: clientStr,
-        counterV: finalCounter
+        counterV: finalCounter,
+        counterC: finalCounter2
     });
 
 

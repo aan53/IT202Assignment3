@@ -37,7 +37,8 @@ function adjCall() {
 
             const original = res.originalString;
             const count = res.counterV;
-            h1F.textContent = "vowels: " + count;
+            const countC = res.counterC;
+            h1F.textContent = "vowels: " + count + " , consonants: " + countC;
 
 
 
